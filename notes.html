@@ -1,0 +1,32 @@
+---
+layout: default
+title: notes
+---
+
+<p>
+aliases:
+<code>
+alias weather='LANG=ru curl wttr.in'
+</code>
+</p>
+
+<p>
+.vim/ftdetect/vim_common.vim
+<code>
+au BufNewFile,BufRead .vim_common set filetype=vim
+</code>
+</p>
+
+<p>
+.vim/ftdetect/aliases.vim
+<code>
+au BufNewFile,BufRead .aliases set filetype=sh
+</code>
+</p>
+
+<p>
+.zshrc ++
+<code>
+[ -f ~/.aliases ] && source ~/.aliases
+</code>
+</p>
