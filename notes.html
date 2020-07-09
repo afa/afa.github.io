@@ -46,6 +46,7 @@ transmission-remote &mdash; -l, (-t)+remove,remove-and-delete
 <p>
   mosaic check: functions
   <p>
+   <code>
  function chk_moz() {
   x=`ssh root@project.megarulez.ru service --status-all|ag --nomultiline -o "\[ \+ \].*(apache2|mysql|postgres)"|wc -l`
   if [[ $x == '2' ]]
@@ -81,7 +82,6 @@ function moz() {
   chk_moz_curl
   chk_moz_body
 }
-   <code>
-    <.code>
+   </code>
   </p>
 </p>
