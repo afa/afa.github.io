@@ -5,9 +5,11 @@ title: notes
 
 <p>
 aliases:
-<code>
-alias weather='LANG=ru curl wttr.in'
-</code>
+<p>
+  <code>
+    alias weather='LANG=ru curl wttr.in'
+  </code>
+  <p>help по ключам - <code>curl wttr.in/:help</code></p>
 </p>
 
 <p>
@@ -39,4 +41,47 @@ transmission-remote &mdash; -l, (-t)+remove,remove-and-delete
 <code>
   alias trl='transmission-remote -l'
   alias trt='transmission-remote -t'
+</p>
+
+<p>
+  mosaic check: functions
+  <p>
+ function chk_moz() {
+  x=`ssh root@project.megarulez.ru service --status-all|ag --nomultiline -o "\[ \+ \].*(apache2|mysql|postgres)"|wc -l`
+  if [[ $x == '2' ]]
+  then
+    echo -e "\033[1;32mservice ok\033[0m"
+  else
+    echo $x
+  fi
+  return
+}
+function chk_moz_curl() {
+  x=`curl -I -s --fail http://project.megarulez.ru/forums/ |head -1|ag --nomultiline -o "HTTP.+200 OK"|wc -l`
+  if [[ $x == "1" ]]
+  then
+    echo -e "\033[1;32mrequest ok\033[0m"
+  else
+    echo $x
+  fi
+  return
+}
+function chk_moz_body() {
+  x=`curl -s --fail http://project.megarulez.ru/forums/ |head -10|tail -1|ag --nomultiline -o "vBulletin 3.8.9 Beta 3"|wc -l`
+  if [[ $x == "1" ]]
+  then
+    echo -e "\033[1;32mbody ok\033[0m"
+  else
+    echo $x
+  fi
+  return
+}
+function moz() {
+  chk_moz
+  chk_moz_curl
+  chk_moz_body
+}
+   <code>
+    <.code>
+  </p>
 </p>
