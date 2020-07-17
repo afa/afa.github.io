@@ -37,7 +37,7 @@ __default prefix: tr, -l &mdash; l, -r &mdash; r, r-a-d &mdash; d__
   mosaic check: functions
 ```sh
 function chk_moz() {
-  x=`ssh root@project.megarulez.ru service --status-all|ag --nomultiline -o "\[ \+ \].*(apache2|mysql|postgres)"|wc -l`
+  x=`ssh mozaic service --status-all|ag --nomultiline -o "\[ \+ \].*(apache2|mysql|postgres)"|wc -l|sed 's/^[\t ]*//g'`
   if [[ $x == '2' ]]
   then
     echo -e "\033[1;32mservice ok\033[0m"
@@ -47,7 +47,7 @@ function chk_moz() {
   return
 }
 function chk_moz_curl() {
-  x=`curl -I -s --fail http://project.megarulez.ru/forums/ |head -1|ag --nomultiline -o "HTTP.+200 OK"|wc -l`
+  x=`curl -I -s --fail http://project.megarulez.ru/forums/ |head -1|ag --nomultiline -o "HTTP.+200 OK"|wc -l|sed 's/^[\t ]*//g'`
   if [[ $x == "1" ]]
   then
     echo -e "\033[1;32mrequest ok\033[0m"
@@ -57,7 +57,7 @@ function chk_moz_curl() {
   return
 }
 function chk_moz_body() {
-  x=`curl -s --fail http://project.megarulez.ru/forums/ |head -10|tail -1|ag --nomultiline -o "vBulletin 3.8.9 Beta 3"|wc -l`
+  x=`curl -s --fail http://project.megarulez.ru/forums/ |head -10|tail -1|ag --nomultiline -o "vBulletin 3.8.9 Beta 3"|wc -l|sed 's/^[\t ]*//g'`
   if [[ $x == "1" ]]
   then
     echo -e "\033[1;32mbody ok\033[0m"
@@ -67,14 +67,14 @@ function chk_moz_body() {
   return
 }
 function moz_up() {
-  x=`ssh root@project.megarulez.ru uptime`
+  x=`ssh mozaic uptime`
   u=`echo "$x"|ag --nocolor -o '\b[0-9:]{5,8}\s+up\s+\K.+(?=,\s+\d+\s+user)'`
   l=`echo "$x"|ag --nocolor -o 'load\saverage:\s+\K[0-9., ]+$'`
   echo -e "\033[1;32mup: $u\nla: $l\033[0m"
   return
 }
 function moz_mem() {
-  x=`ssh root@project.megarulez.ru free -m`
+  x=`ssh mozaic free -m`
   # awk -F ' ' '/^Mem:/ { print $7 }'
   f=`echo "$x"|awk -F ' ' '/^Mem:/ { print $7 }'`
   s=`echo "$x"|awk -F ' ' '/^Swap:/ { print $4 }'`
