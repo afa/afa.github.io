@@ -8,3 +8,4 @@ title: Записные мелочи
 
 [rcm разности](rcm.html)
 
+[zsh](zsh.html)
