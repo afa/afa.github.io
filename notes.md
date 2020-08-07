@@ -3,7 +3,7 @@ layout: default
 title: notes
 ---
 
-aliases:
+## aliases:
 ```sh
     alias weather='LANG=ru curl wttr.in'
 ```
@@ -25,7 +25,7 @@ au BufNewFile,BufRead .aliases set filetype=sh
 [ -f ~/.aliases ] && source ~/.aliases
 ```
 
-aliases transmission:
+###aliases transmission:
 _required_
 `transmission-remote` --  -l, (-t)+remove,remove-and-delete
 __default prefix: tr, -l &mdash; l, -r &mdash; r, r-a-d &mdash; d__
@@ -34,7 +34,7 @@ __default prefix: tr, -l &mdash; l, -r &mdash; r, r-a-d &mdash; d__
   alias trt='transmission-remote -t'
 ```
 
-  mosaic check: functions
+## mosaic check: functions
 ```sh
 function chk_moz() {
   x=`ssh mozaic service --status-all|ag --nomultiline -o "\[ \+ \].*(apache2|mysql|postgres)"|wc -l|sed 's/^[\t ]*//g'`
@@ -88,6 +88,8 @@ function moz() {
   moz_up
   moz_mem
 }
-
+```
+## commons
+```sh
 alias notes="$EDITOR ~/notes"
 ```
