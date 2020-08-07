@@ -25,7 +25,7 @@ au BufNewFile,BufRead .aliases set filetype=sh
 [ -f ~/.aliases ] && source ~/.aliases
 ```
 
-###aliases transmission:
+### aliases transmission:
 _required_
 `transmission-remote` --  -l, (-t)+remove,remove-and-delete
 __default prefix: tr, -l &mdash; l, -r &mdash; r, r-a-d &mdash; d__
