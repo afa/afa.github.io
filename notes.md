@@ -25,6 +25,10 @@ au BufNewFile,BufRead .aliases set filetype=sh
 [ -f ~/.aliases ] && source ~/.aliases
 ```
 
+### замечание по скидыванию частых команд в алиасы
+
+если в команде есть кавычки -- `sed` к примеру -- проще закинуть в функцию, не мучаться с ескэйпами
+
 ### aliases transmission:
 _required_
 `transmission-remote` --  -l, (-t)+remove,remove-and-delete
