@@ -46,3 +46,14 @@ __рельсы__
 # others
 
 * wiki, git based -- [gollum](https://github.com/gollum/gollum)
+
+# порядок настройки, для вбивания в ansible
+
+1. поставить систему
+1. настроить сеть (wifi)
+1. развернуть порты и поставить стартовый комплект
+  * portsnap fetch
+  * portsnap extract
+  * cd /usr/ports/ports-mgmt/portmaster&&make install clean
+  * portmaster shells/zsh sysutils/rcm devel/git
+1. chsh, поставить шеллом zsh
