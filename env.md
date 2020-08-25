@@ -52,8 +52,10 @@ __рельсы__
 1. поставить систему
 1. настроить сеть (wifi)
 1. развернуть порты и поставить стартовый комплект
+  * от рута
   * portsnap fetch
   * portsnap extract
   * cd /usr/ports/ports-mgmt/portmaster&&make install clean
   * portmaster shells/zsh sysutils/rcm devel/git
-1. chsh, поставить шеллом zsh
+1. chsh afa, поставить шеллом zsh (/usr/local/bin/zsh для freebsd)
+1. добавить пользователя в sudoers, переключиться на пользователя
