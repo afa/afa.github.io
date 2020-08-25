@@ -59,3 +59,4 @@ __рельсы__
   * portmaster shells/zsh sysutils/rcm devel/git
 1. chsh afa, поставить шеллом zsh (/usr/local/bin/zsh для freebsd)
 1. добавить пользователя в sudoers, переключиться на пользователя
+1. поставить lxde -- sudo portmaster x11/lxde-meta
