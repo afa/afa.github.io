@@ -15,3 +15,5 @@ title: Записные мелочи
 [язык рисования графов dot](dot.html)
 
 [Log](posts/index)
+
+[Забавно о дивмате](diamat.html)
