@@ -16,4 +16,4 @@ title: Записные мелочи
 
 [Log](posts/index)
 
-[Забавно о дивмате](diamat.html)
+[Забавно о диамате](diamat.html)
