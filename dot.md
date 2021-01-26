@@ -16,5 +16,7 @@ title: Язык рисования графов dot
 субграф, начинающийся с cluster_ -- выделяет подструктуру
 
 [примеры на языке dot](http://dkhramov.dp.ua/opisanie-grafov-na-iazyke-dot)
+
 [рисование графов с dot & graphviz](https://tonyballantyne.com/graphs.html)
+
 [аттрибуты@graphviz.org](http://graphviz.org/doc/info/attrs.html)
