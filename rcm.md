@@ -27,6 +27,7 @@ layout: default
 * hp
 * afanote (TODO)
 * afahome (TODO)
+* afawork (_IN PROGRESS_)
 
 ### Файлы, раскладываемые по хостам
 
