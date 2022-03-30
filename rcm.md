@@ -26,6 +26,7 @@ layout: default
 * ioteh (legacy)
 * hp
 * afanote (TODO)
+* afamac (cloned from afanote, need fixes in vim & local aliases -- local_cut)
 * afahome (TODO)
 * afawork (_IN PROGRESS_)
 
